@@ -1,0 +1,6 @@
+{
+  "driver_monocameravrtracker": {
+    "enable": true,
+    "minimum_confidence": 0.5
+  }
+}

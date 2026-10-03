@@ -1,0 +1,24 @@
+# Paths are relative to THIS file. Target rate is a loop cap, not measured GPU FPS.
+target_fps: 30
+model:
+  upstream_dir: ../external/Fast-SAM-3D-Body
+  checkpoint_path: ../models/sam-3d-body-dinov3/model.ckpt
+  mhr_path: ../models/sam-3d-body-dinov3/assets/mhr_model.pt
+  device: cuda
+  inference_type: body
+  # bbox: [0, 0, 1280, 720] # Optional fixed person crop. Entire frame by default.
+  # detector_model_path: ../models/yolo11n.pt # Optional separately licensed person detector.
+  # camera_intrinsics: [[1000, 0, 640], [0, 1000, 360], [0, 0, 1]] # Use measured values.
+camera:
+  index: 0
+  width: 1280
+  height: 720
+transport:
+  host: 127.0.0.1
+  port: 39570
+tracking:
+  smoothing: true
+  foot_lock: false
+  min_confidence: 0.2
+  max_age_seconds: 0.5
+  loss_reset_seconds: 0.5

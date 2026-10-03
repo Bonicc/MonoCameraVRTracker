@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "monovrtrack"
+version = "0.1.0"
+description = "Monocular RGB pose tracking for three SteamVR virtual trackers"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Bonicc"}]
+dependencies = ["PyYAML>=6.0,<7"]
+
+[project.optional-dependencies]
+camera = ["opencv-python>=4.9,<5", "numpy>=1.26,<3"]
+zmq = ["pyzmq>=25,<28"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+monovrtrack = "monovrtrack.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

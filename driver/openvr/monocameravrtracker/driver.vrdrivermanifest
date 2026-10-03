@@ -1,0 +1,7 @@
+{
+  "alwaysActivate": true,
+  "name": "monocameravrtracker",
+  "directory": "",
+  "resourceOnly": false,
+  "hmd_presence": []
+}
